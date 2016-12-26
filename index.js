@@ -8,13 +8,13 @@ var config = {
 
 smartBot = new SmartBot(config);
 
-smartBot.step('first-step',SmartBot.STEP_SENTENCE,{
+smartBot.addStep('first-step','sentence',{
 	message: 'Hi, i am a bot',
 	goTo: 'menu',
 	sleep: 3
 });
 
-smartBot.step('menu', SmartBot.STEP_OPTION_MENU,{
+smartBot.addStep('menu', 'option-menu',{
 	message: 'Choose a option',
 	options: [
 		{
@@ -28,20 +28,20 @@ smartBot.step('menu', SmartBot.STEP_OPTION_MENU,{
 	]
 });
 
-smartBot.step('option-1-selected',SmartBot.STEP_SENTENCE,{
+smartBot.addStep('option-1-selected','sentence',{
 	message: 'Say you select option 1',
 	goTo: 'option-1-selected',
 	sleep: 3
 });
 
-smartBot.step('option-2-selected',SmartBot.STEP_SENTENCE,{
+smartBot.addStep('option-2-selected','sentence',{
 	message: 'Say you select option 2',
 	goTo: 'option-2-selected',
 	sleep: 3
 });
 
-smartBot.step('goodbye',SmartBot.STEP_SENTENCE,{
+smartBot.addStep('goodbye','sentence',{
 	message: 'Goodbye!!!',
 });
 
-smartBot.goTo('first-step');
+smartBot.setStartStep('first-step');
